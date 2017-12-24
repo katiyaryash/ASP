@@ -1,0 +1,26 @@
+﻿@model Evention.Models.ViewEvents
+@{
+    ViewBag.Title = "ContentPage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model != null && Model.lstAllEvents.Count > 0)
+{
+    <div class="container-fluid">
+        @for (var i = 0; i < Model.lstAllEvents.Count; i++)
+        {
+            if (Model.lstAllEvents[i].Image.Length != 0) { 
+            <img src="@Model.lstAllEvents[i].Image" height="500px" width="375px"/>
+        }
+        <h2>@Model.lstAllEvents[i].Feature</h2>
+            <p>@Model.lstAllEvents[i].ECategory</p>
+            
+        <strong style="float:left">Place:</strong><p >@Model.lstAllEvents[i].Place</p>
+        <strong style="float:left">Cost:</strong><p>@Model.lstAllEvents[i].Cost</p>
+            
+        <strong style="float:left">About:</strong><p>@Model.lstAllEvents[i].About</p>
+            
+            <hr/>
+           
+        }
+    </div>
+}

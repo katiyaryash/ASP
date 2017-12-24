@@ -1,0 +1,20 @@
+﻿@model Evention.Models.ViewEvents
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Events</h2>
+@if (Model != null && Model.lstEventCategory.Count>0)
+{ 
+<div class="container-fluid">
+    @foreach (var lst in Model.lstEventCategory)
+    {
+    <div class="row">
+        <div class="col-md-3">
+            <a href="@Url.Action("AllEvents", "Home")" class="btn btn-primary btn-lg btn-block btn-huge1"><h1 class="head">@lst.Category</h1></a>
+        </div>
+    </div>
+    }
+</div>
+}

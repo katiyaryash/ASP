@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+@Styles.Render("~/Content/Common.css")
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+   
+    <div class="jumbotron ">
+        <button class="button button1"><a href="https://play.google.com/store/apps/details?id=com.app.p2979EF&hl=en" target="_blank" style="text-decoration: none;">Google Play</a></button>
+        <button class="button button1"><a href="https://itunes.apple.com/au/app/whats-on!-delft/id1174328798?mt=8" target="_blank" style="text-decoration: none;">Play Store</a></button>
+    </div>
+
+    <div id="about" class="fluid journey">
+        <div class="row">
+            <div class="col-sm-8">
+                <h2 style="color:white">Shape your Student journey</h2><br>
+                <h4 style="color:white">WhatsOn Delft is a community-driven platform built by TU Delft students, for students. Together, we can help each other get the full student experience.</h4><br>
+
+            </div>
+            <div class="col-sm-4">
+                <img src="/Content/images/flow.png" alt="" class="flow">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-grey">
+        <h3 class="flip_heading">WhatsOn Delft curates all the relevant information a student will need.</h3>
+        <p class="para">We help you in three areas in your journey that most students have problems with.</p>
+        <div class="row">
+            <div class="flip-container" id="test" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="/Content/images/settings.png" alt="" height="42" width="42">
+                        <h3 class="text">Settling down in a new country</h3>
+                    </div>
+                    <div class="back">
+                        <img src="/Content/images/star1.jpg" alt="" height="42" width="42">
+                        <p id="flips">Be well informed before moving in, and settle down like a local! Read through our tips and information sections to know about the city of Delft.
+                    </div>
+                </div>
+            </div>
+            <div class="flip-container" id="test" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="/Content/images/social.jpg" alt="" height="42" width="42">
+                        <h3 class="text">Expanding your Social Networks</h3>
+                    </div>
+                    <div class="back">
+                        <img src="/Content/images/star1.jpg" alt="" height="42" width="42">
+                        <p id="flips">Socialize and make new connections! We show you an overview of social and cultural events happening in Delft.
+                    </div>
+                </div>
+            </div>
+            <div class="flip-container" id="test" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="/Content/images/book.jpg" alt="" height="42" width="42">
+                        <h3 class="text">Making your first Career steps</h3>
+                    </div>
+                    <div class="back">
+                        <img src="/Content/images/star1.jpg" alt="" height="42" width="42">
+                        <p id="flips">Learn skills that count! We make it easier for you to find an internship or thesis project by showing you workshops and career events.
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <div class="fluid">
+        <img src="/Content/images/connect.png" alt="" class="only">
+
+    </div>
+    <h2 style="text-align:center;">Download our app and we promise you will never have a dull moment.</h2>
+    <div class="fluid" id="application" style="background-color:#039BE5">
+       <img src="/Content/images/middle.png" class="horizontal">
+    </div>
+    <!-- Slideshow container -->
+    <div class="container-fluid " id="customers">
+        <h2 style="text-align:center;">Our Partners</h2>
+        <div class="slider-holder">
+            <span id="slider-image-1"></span>
+            <span id="slider-image-2"></span>
+            <span id="slider-image-3"></span>
+            <div class="image-holder">
+                <img src="/Content/images/Delta.png" hspace="10" />
+                <img src="/Content/images/duwo.png" hspace="10" />
+                <img src="/Content/images/part1.jpg" hspace="10" />
+                <img src="/Content/images/Sodexo.jpg" hspace="10" />
+                <img src="/Content/images/StuD.jpg" hspace="10" />
+                <img src="/Content/images/Yes.jpeg" hspace="10" />
+            </div>
+            <div class="button-holder">
+                <a href="#slider-image-1" class="slider-change"></a>
+                <a href="#slider-image-2" class="slider-change"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Container (Pricing Section) -->
+    <div id="pricing" class="container-fluid ">
+        <img src="/Content/images/reviews.png" alt="" class="only">
+    </div>
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng(41.878114, -87.629798);
+            var mapProp = {
+                center: myCenter,
+                zoom: 12,
+                scrollwheel: false,
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter
+            });
+            marker.setMap(map);
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+    <!--
+    To use this code on your website, get a free API key from Google.
+    Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+    -->
+   
+    
+    <script>
+        $(document).ready(function() {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 900, function() {
+
+                        // Add hash (#) to URL when done scrolling (default click behavior)
+                        window.location.hash = hash;
+                    });
+                } // End if
+            });
+
+            $(window).scroll(function() {
+                $(".slideanim").each(function() {
+                    var pos = $(this).offset().top;
+
+                    var winTop = $(window).scrollTop();
+                    if (pos < winTop + 600) {
+                        $(this).addClass("slide");
+                    }
+                });
+            });
+        })
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>

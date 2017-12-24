@@ -1,0 +1,33 @@
+﻿@model Evention.Models.ViewEvents
+
+@{
+    ViewBag.Title = "AllEvents";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (Model != null && Model.lstEventDetails.Count > 0 && Model.lstEventCategory.Count>0)
+{
+    var k=0;
+    for (var i = 0; i < Model.lstEventDetails.Count; i++)
+    {
+        if (Model.lstEventCategory[k].Category == Model.lstEventDetails[i].Type)
+        {
+            <div class="container-fluid">
+
+
+                <a href="@Url.Action("ContentPage","Home")">
+                    <div class="headline">
+                        <h2>@Model.lstEventDetails[i].Feature</h2>
+                    </div>
+                </a>
+                <div class="content">
+                    <p style="float:left">@Model.lstEventDetails[i].ECategory</p>
+                    <p style="float:left">@Model.lstEventDetails[i].Cost</p>
+                    <p style="float:right">@Model.lstEventDetails[i].Date</p>
+                </div>
+                <hr />
+
+            </div>
+        }
+    }
+}
+
